@@ -18,7 +18,7 @@ class App extends Component {
         <NavigationContainer>
           <SwitchNavigator />
         </NavigationContainer>
-    </Provider>
+      </Provider>
     );
   }
 }
