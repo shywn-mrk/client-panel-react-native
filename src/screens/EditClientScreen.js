@@ -16,7 +16,7 @@ const EditClientScreen = () => {
         <ScrollView>
 
             <View style={styles.container}>
-                <ScreenLogo image={NewUserIcon} title="New Client" />
+                <ScreenLogo image={NewUserIcon} title="Edit Client" />
                 <TextInputGroup
                     label="First Name"
                     placeholder="Enter Client First Name ..."

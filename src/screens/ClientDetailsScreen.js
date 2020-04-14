@@ -11,13 +11,16 @@ import InfoIcon from '../assets/info-circle-solid.png'
 import Button from '../components/layout/Button'
 import ScreenLogo from '../components/layout/ScreenLogo'
 
-const ClientDetailsScreen = () => {
+const ClientDetailsScreen = (props) => {
+    const editScreenNavigator = () => {
+        props.navigation.navigate("Edit")
+    }
     return (
         <View style={styles.container}>
             <ScreenLogo image={InfoIcon} title="Client Details" />
             <View style={styles.buttonsContainer}>
                 <View style={styles.button}>
-                    <Button value="Edit" color='#000' />
+                    <Button handler={editScreenNavigator} value="Edit" color='#000' />
                 </View>
                 <View style={styles.button}>
                     <Button value="Delete" color='#dc3545' />

@@ -3,6 +3,7 @@ import React from 'react'
 import ClientsScreen from '../screens/ClientsScreen'
 import ClientDetailsScreen from '../screens/ClientDetailsScreen'
 import NewClientScreen from '../screens/NewClientScreen'
+import EditClientScreen from '../screens/EditClientScreen'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -38,6 +39,13 @@ export default ClientManagerStack = () => {
                 component={NewClientScreen}
                 options={{
                     title: 'New Client'
+                }}
+            />
+            <Stack.Screen
+                name="Edit"
+                component={EditClientScreen}
+                options={{
+                    title: 'Edit Client'
                 }}
             />
         </Stack.Navigator>
