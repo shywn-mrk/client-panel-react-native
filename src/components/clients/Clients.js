@@ -52,8 +52,9 @@ class Clients extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
-        width: '100%'
+        flex: 1,
+        width: '100%',
+        alignItems: 'center'
     }
 })
 
