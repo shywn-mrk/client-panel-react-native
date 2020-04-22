@@ -15,13 +15,6 @@ export default ClientManagerStack = () => {
             screenOptions={{
                 title: '',
                 header: () => null,
-                // headerStyle: {
-                //     backgroundColor: '#007bff',
-                // },
-                // headerTintColor: 'white',
-                // headerTitleStyle: {
-                //     fontWeight: 'bold',
-                // },
             }}
         >
             <Stack.Screen

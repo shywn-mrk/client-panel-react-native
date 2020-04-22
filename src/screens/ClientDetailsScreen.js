@@ -12,9 +12,12 @@ import Button from '../components/layout/Button'
 import ScreenLogo from '../components/layout/ScreenLogo'
 
 const ClientDetailsScreen = (props) => {
+    const { firstName, lastName, email, phone, balance } = props.route.params.client
+
     const editScreenNavigator = () => {
-        props.navigation.navigate("Edit")
+        props.navigation.navigate("Edit", { client: props.route.params.client })
     }
+
     return (
         <View style={styles.container}>
             <ScreenLogo image={InfoIcon} title="Client Details" />
@@ -27,13 +30,13 @@ const ClientDetailsScreen = (props) => {
                 </View>
             </View>
             <View style={styles.clientContainer}>
-                <Text style={styles.text}>Name: Karen Smith</Text>
+                <Text style={styles.text}>Name: {firstName} {lastName}</Text>
             
-                <Text style={styles.text}>Email: Karen@gamil.com</Text>
+                <Text style={styles.text}>Email: {email}</Text>
             
-                <Text style={styles.text}>Phone: 555-555-5555</Text>
+                <Text style={styles.text}>Phone: {phone}</Text>
             
-                <Text style={styles.text}>Balance: $40.00</Text>
+                <Text style={styles.text}>Balance: ${parseFloat(balance).toFixed(2)}</Text>
                 <TextInput style={styles.input} placeholder="Enter New Balance ..." />
                 <View style={{ width: '25%' }}>
                     <Button value="Update" color='#28a745' />

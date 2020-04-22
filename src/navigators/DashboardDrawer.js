@@ -6,10 +6,12 @@ import {
 import DashboardIcon from '../assets/columns-solid.png'
 import SettingsIcon from '../assets/cogs-solid.png'
 import AboutIcon from '../assets/address-card-solid.png'
+import LogoutIcon from '../assets/sign-out-alt-solid.png'
 
 import ClientManagerStack from './ClientManagerStack'
 import AboutScreen from '../screens/AboutScreen'
 import SettingsScreen from '../screens/SettingsScreen'
+import LogoutScreen from '../screens/LogoutScreen'
 
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
@@ -50,6 +52,13 @@ export default DashboardStack = () => {
                 component={AboutScreen}
                 options={{
                     drawerIcon: ({focused, size}) => <Image source={AboutIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />
+                }}
+            />
+            <Drawer.Screen
+                name="Logout"
+                component={LogoutScreen}
+                options={{
+                    drawerIcon: ({focused, size}) => <Image source={LogoutIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />
                 }}
             />
         </Drawer.Navigator>

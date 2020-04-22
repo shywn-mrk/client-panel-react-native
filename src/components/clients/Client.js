@@ -11,6 +11,11 @@ import ArrowImage from '../../assets/arrow-circle-right-solid.png'
 
 const Client = (props) => {
     const { firstName, lastName, email, balance } = props.client
+
+    const detailsNavigationHandler = () => {
+        props.navigation.navigate('Details', { client: props.client })
+    }
+
     return (
         <View style={styles.container}>
             <View style={[styles.dataView, { flex: 1 }]}>
@@ -23,7 +28,7 @@ const Client = (props) => {
                 <Text style={styles.dataText}>${parseFloat(balance).toFixed(2)}</Text>
             </View>
             <View style={[styles.dataView, { flex: 1.2 }]}>
-                <Button handler={props.detailsNavigation} value='Details' imageTintColor='white' color="#6c757d" image={ArrowImage} />
+                <Button handler={detailsNavigationHandler} value='Details' imageTintColor='white' color="#6c757d" image={ArrowImage} />
             </View>
         </View>
     )

@@ -18,10 +18,6 @@ class Clients extends Component {
         this.props.navigation.navigate('New')
     }
 
-    clientDetailsNavigationHandler = (id) => {
-        this.props.navigation.navigate('Details')
-    }
-
     render() {
         return (
             <Consumer>
@@ -38,7 +34,7 @@ class Clients extends Component {
                                     style={{ width: '100%' }}
                                     contentContainerStyle={{ alignItems: 'center' }}
                                     data={clients}
-                                    renderItem={({item}) => <Client client={item} detailsNavigation={() => this.clientDetailsNavigationHandler(item.id)} />}
+                                    renderItem={({item}) => <Client client={item} navigation={this.props.navigation} />}
                                     keyExtractor={item => item.id}
                                 />
                             </View>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
     View,
     Text,
@@ -7,12 +7,10 @@ import {
 } from 'react-native'
 
 const TextInputGroup = (props) => {
-    const [value, setValue] = useState('')
-
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{props.label}:</Text>
-            <TextInput onChangeText={text => setValue(text)} defaultValue={value} style={styles.input} placeholder={props.placeholder} secureTextEntry={props.secure} />
+            <TextInput onChangeText={props.onChange} defaultValue={props.value} style={styles.input} placeholder={props.placeholder} secureTextEntry={props.secure} />
         </View>
     )
 }

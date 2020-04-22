@@ -6,7 +6,15 @@ const reducer = (state, action) => {
     switch(action.type) {
         case 'ADD_CLIENT':
             return {
-                ...state
+                ...state,
+                clients: [...state.clients, action.payload]
+            }
+        case 'EDIT_CLIENT':
+            return {
+                ...state,
+                clients: state.clients.map(client => 
+                    client.id === action.payload.id ? (client = action.payload) : client
+                )
             }
         case 'REMOVE_CLIENT':
             return {
