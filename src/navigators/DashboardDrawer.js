@@ -18,37 +18,38 @@ const Drawer = createDrawerNavigator()
 export default DashboardStack = () => {
     return (
         <Drawer.Navigator 
-        drawerType="front"
-        drawerStyle={{
-            backgroundColor: '#007bff',
-            opacity: 0.9,
-            width: '60%',
-        }}
-        drawerContentOptions={{
-            activeTintColor: 'white',
-            activeBackgroundColor: '#6c757d',
-            inactiveTintColor: 'white'
-        }}
+            drawerType="front"
+            drawerStyle={{
+                backgroundColor: '#007bff',
+                opacity: 0.9,
+                width: '60%',
+            }}
+            drawerContentOptions={{
+                activeTintColor: 'white',
+                activeBackgroundColor: '#6c757d',
+                inactiveTintColor: 'white'
+            }}
         >
             <Drawer.Screen
                 name="Clients"
                 component={ClientManagerStack}
                 options={{
-                drawerIcon: ({focused, size}) => <Image source={DashboardIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />,
+                    drawerIcon: ({focused, size}) => <Image source={DashboardIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />,
                 }}
             />
             <Drawer.Screen
                 name="Settings"
                 component={SettingsScreen}
                 options={{
-                drawerIcon: ({focused, size}) => <Image source={SettingsIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />
+                    drawerIcon: ({focused, size}) => <Image source={SettingsIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />,
+                    headerTite: 'Settings'
                 }}
             />
             <Drawer.Screen
                 name="About"
                 component={AboutScreen}
                 options={{
-                drawerIcon: ({focused, size}) => <Image source={AboutIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />
+                    drawerIcon: ({focused, size}) => <Image source={AboutIcon} style={{ width: focused ? 40 : size, height: focused ? 40 : size, tintColor: 'white', resizeMode: 'contain' }} />
                 }}
             />
         </Drawer.Navigator>

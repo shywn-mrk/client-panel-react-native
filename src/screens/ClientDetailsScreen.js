@@ -34,7 +34,7 @@ const ClientDetailsScreen = (props) => {
                 <Text style={styles.text}>Phone: 555-555-5555</Text>
             
                 <Text style={styles.text}>Balance: $40.00</Text>
-                <TextInput style={styles.input} placeholder="Enter Client New Balance ..." />
+                <TextInput style={styles.input} placeholder="Enter New Balance ..." />
                 <View style={{ width: '25%' }}>
                     <Button value="Update" color='#28a745' />
                 </View>
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: '#007bff',
         marginTop: 25,
-        marginBottom: 10
+        marginBottom: 10,
+        padding: 10
     }
 })
 

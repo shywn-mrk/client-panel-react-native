@@ -14,13 +14,14 @@ export default ClientManagerStack = () => {
         <Stack.Navigator
             screenOptions={{
                 title: '',
-                headerStyle: {
-                    backgroundColor: '#007bff',
-                },
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
+                header: () => null,
+                // headerStyle: {
+                //     backgroundColor: '#007bff',
+                // },
+                // headerTintColor: 'white',
+                // headerTitleStyle: {
+                //     fontWeight: 'bold',
+                // },
             }}
         >
             <Stack.Screen

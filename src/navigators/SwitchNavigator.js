@@ -1,17 +1,24 @@
 // switching between auth pages and dashboard
-import React, { useState } from 'react'
+import React from 'react'
+import {
+    Image,
+    TouchableOpacity
+} from 'react-native'
 
 import { createStackNavigator} from '@react-navigation/stack'
+import { DrawerActions } from '@react-navigation/native';
 
 import DashboardDrawer from './DashboardDrawer'
 import LoginScreen from '../screens/LoginScreen'
 import RegisterScreen from '../screens/RegisterScreen'
 
+import DrawerIcon from '../assets/bars-solid.png'
+
 import { Consumer } from '../../context'
 
 const Stack = createStackNavigator()
 
-export default SwtichNavigator = () => {
+export default SwtichNavigator = (props) => {
     return (
         <Consumer>
             {
@@ -36,9 +43,10 @@ export default SwtichNavigator = () => {
                                     <Stack.Screen
                                         name="Dashboard"
                                         component={DashboardDrawer} 
-                                        options={{
-                                            header: () => null
-                                        }}
+                                        options={({ navigation }) => ({
+                                            title: '',
+                                            headerLeft: () => <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}><Image source={DrawerIcon} style={{ marginLeft: 10, width:  30, height: 30, tintColor: 'white', resizeMode: 'contain' }} /></TouchableOpacity>
+                                        })}
                                     />
                                 </>
                                 :

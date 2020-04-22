@@ -14,7 +14,6 @@ import NewUserIcon from '../assets/user-plus-solid.png'
 const EditClientScreen = () => {
     return (
         <ScrollView>
-
             <View style={styles.container}>
                 <ScreenLogo image={NewUserIcon} title="Edit Client" />
                 <TextInputGroup
@@ -71,7 +70,3 @@ const styles = StyleSheet.create({
 })
  
 export default EditClientScreen;
-
-
-
-
