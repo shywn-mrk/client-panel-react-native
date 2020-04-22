@@ -18,7 +18,8 @@ const reducer = (state, action) => {
             }
         case 'REMOVE_CLIENT':
             return {
-                ...state
+                ...state,
+                clients: state.clients.filter(client => client.id !== action.payload)
             }
         case 'LOGIN':
             return {
