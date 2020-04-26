@@ -9,11 +9,21 @@ import TextInputGroup from '../components/layout/TextInputGroup'
 import Button from '../components/layout/Button'
 import ScreenLogo from '../components/layout/ScreenLogo'
 
-import { v4 as uuid } from 'uuid'
+// import { v4 as uuid } from 'uuid'
 
 import NewUserIcon from '../assets/user-plus-solid.png'
 
 import { Consumer } from '../../context'
+
+// got from stackoverflow
+// using it instead of uuid package
+// uuid have problems with react-native so far
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+}
 
 const AddClientScreen = (props) =>{
     const [firstName, setFirstName] = useState('')
@@ -24,7 +34,7 @@ const AddClientScreen = (props) =>{
 
     const onSubmitHandler = (dispatch) => {
         const newContact = {
-            id: uuid(),
+            id: uuidv4(),
             firstName,
             lastName,
             email,
