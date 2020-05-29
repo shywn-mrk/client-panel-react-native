@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         margin: 10
     },
-    input:{
+    input: {
         borderWidth: 2,
         borderRadius: 15,
         borderColor: '#007bff',

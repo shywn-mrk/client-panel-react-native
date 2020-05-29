@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
     View,
+    Text,
     FlatList,
     StyleSheet
 } from 'react-native'
@@ -35,14 +36,26 @@ class Clients extends Component {
                                 <View style={{ width: 80 }}>
                                     <Button handler={this.newClientNavigationHandler} value="New" image={AddImage} imageTintColor='white' color="#28a745" />
                                 </View>
-                                <ClientsTableHeader />
-                                <FlatList
-                                    style={{ width: '100%' }}
-                                    contentContainerStyle={{ alignItems: 'center' }}
-                                    data={clients}
-                                    renderItem={this.clientRenderFunction}
-                                    keyExtractor={item => item.id}
-                                />
+                                {
+                                    clients.length != 0 ? (
+                                        <>
+                                        <ClientsTableHeader />
+                                        <FlatList
+                                            style={{ width: '100%' }}
+                                            contentContainerStyle={{ alignItems: 'center' }}
+                                            data={clients}
+                                            renderItem={this.clientRenderFunction}
+                                            initialNumToRender={7}
+                                            keyExtractor={item => item.id}
+                                        />
+                                        </>
+                                    ) : (
+                                        <>
+                                        <Text style={styles.text}>No Client Found!</Text>
+                                        <Text style={styles.text}>Add New Clients To See Their Information.</Text>
+                                        </>
+                                    )
+                                }
                             </View>
                         )
                     }
@@ -57,6 +70,12 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         alignItems: 'center'
+    },
+    text: { 
+        fontSize: 20,
+        fontWeight: 'bold',
+        margin: 10,
+        textAlign: 'center'
     }
 })
 

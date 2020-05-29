@@ -50,8 +50,7 @@ const AboutScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-
+        alignItems: "center"
     },
     row: {
         flexDirection: 'row',
@@ -83,5 +82,3 @@ const styles = StyleSheet.create({
 })
 
 export default AboutScreen
-
-

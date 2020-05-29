@@ -21,17 +21,17 @@ const CheckBoxGroup = (props) =>{
                 <View style={{
                     height: 20,
                     width: 20,
-                    borderRadius: 20 / 2,
+                    borderRadius: 10,
                     borderWidth: 2,
                     borderColor: '#007bff',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    justifyContent: 'space-around',
                 }}>
                 {
                     selected ?
                     <View style={{
-                        height: 20 / 2 + 2,
-                        width: 20 / 2 + 2,
+                        height: 12,
+                        width: 12,
                         borderRadius: 6,
                         backgroundColor: '#007bff',
                     }}/>
@@ -56,5 +56,3 @@ const styles = StyleSheet.create({
 })
 
 export default CheckBoxGroup
-
-

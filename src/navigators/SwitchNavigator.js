@@ -1,4 +1,3 @@
-// switching between auth pages and dashboard
 import React from 'react'
 import {
     Image,
