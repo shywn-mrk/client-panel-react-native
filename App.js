@@ -1,26 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import SplashScreen from 'react-native-splash-screen'
+import ContextProvider from './src/context/ContextProvider'
 
-import SwitchNavigator from './src/navigators/SwitchNavigator'
 import { NavigationContainer } from '@react-navigation/native'
+import SwitchNavigator from './src/navigators/SwitchNavigator'
 
-import { Provider } from './context'
-
-class App extends Component {
-    componentDidMount() {
-        SplashScreen.hide()
-    }
-
-    render() {
-        return (
-            <Provider>
-                <NavigationContainer>
-                    <SwitchNavigator />
-                </NavigationContainer>
-            </Provider>
-        )
-    }
+const App = () => {
+  return (
+    <ContextProvider>
+      <NavigationContainer>
+        <SwitchNavigator />
+      </NavigationContainer>
+    </ContextProvider>
+  )
 }
 
 export default App
